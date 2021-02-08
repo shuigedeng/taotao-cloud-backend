@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taotao-cloud-backend-react
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: taotao-cloud-backend-react
+  template:
+    metadata:
+      labels:
+        app: taotao-cloud-backend-react
+    spec:
+      containers:
+        - image: taotao-cloud/taotao-cloud-backend-react:${CICD_EXECUTION_SEQUENCE}
+          name: taotao-cloud-backend-react
+            imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          env:
+            - name: TAOTAO_CLOUD_HOST_ADDRESS
+              value: http://dtbox.top
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: taotao-cloud-backend-react-service
+spec:
+  type: NodePort
+  selector:
+    app: taotao-cloud-backend-react
+  ports:
+    - name: backend-ui-port
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30001
