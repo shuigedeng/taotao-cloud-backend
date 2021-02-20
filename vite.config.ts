@@ -61,13 +61,13 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       chunkSizeWarningLimit: 1200
     },
     define: {
-      ...viteEnv,
-      __VERSION__: pkg.version,
-      // setting vue-i18-next
-      // Suppress warning
-      __VUE_I18N_LEGACY_API__: false,
-      __VUE_I18N_FULL_INSTALL__: false,
-      __INTLIFY_PROD_DEVTOOLS__: false
+      // ...viteEnv,
+      // __VERSION__: pkg.version,
+      // // setting vue-i18-next
+      // // Suppress warning
+      // __VUE_I18N_LEGACY_API__: false,
+      // __VUE_I18N_FULL_INSTALL__: false,
+      // __INTLIFY_PROD_DEVTOOLS__: false
     },
     css: {
       preprocessorOptions: {

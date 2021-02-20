@@ -1,4 +1,4 @@
-import React, { Suspense, useReducer } from 'react'
+import React, {Suspense, useReducer, useState} from 'react'
 import { ApolloProvider } from '@apollo/client'
 import { ConfigProvider, Spin } from 'antd'
 import { IntlProvider } from 'react-intl'
@@ -57,21 +57,21 @@ const App: React.FC = () => {
                   // </div>
 
                   <div className="flex w-screen h-screen justify-center items-center flex-col bg-f4f7f9">
-                    <div className="absolute flex inset-y-2/4 inset-x-2/4 ">
+                    <div className="absolute flex inset-y-2/4 inset-x-2/4  ">
                       <img
                         src="/resource/img/logo.png"
                         className="app-loading-logo"
                         alt="Logo"
                       />
-                      <div className="app-loading-dots">
-                        <span className="dot dot-spin">
-                          <i></i>
-                          <i></i>
-                          <i></i>
-                          <i></i>
-                        </span>
-                      </div>
-                      <div className="app-loading-title"></div>
+                      {/*<div className="app-loading-dots">*/}
+                      {/*  <span className="dot dot-spin">*/}
+                      {/*    <i></i>*/}
+                      {/*    <i></i>*/}
+                      {/*    <i></i>*/}
+                      {/*    <i></i>*/}
+                      {/*  </span>*/}
+                      {/*</div>*/}
+                      {/*<div className="app-loading-title"></div>*/}
                     </div>
                   </div>
                 }

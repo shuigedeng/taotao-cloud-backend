@@ -1,64 +1,69 @@
-import { MenuTypeEnum, MenuModeEnum, TriggerEnum } from '/@/enums/menuEnum';
-import { ContentEnum, PermissionModeEnum, ThemeEnum, RouterTransitionEnum } from '/@/enums/appEnum';
-import { CacheTypeEnum } from '/@/enums/cacheEnum';
+import { MenuTypeEnum, MenuModeEnum, TriggerEnum } from '/@/enums/menuEnum'
+import {
+  ContentEnum,
+  PermissionModeEnum,
+  ThemeEnum,
+  RouterTransitionEnum
+} from '/@/enums/appEnum'
+import { CacheTypeEnum } from '/@/enums/cacheEnum'
 // import type { LocaleType } from '/@/locales/types';
 // import { ThemeMode } from '../../build/config/lessModifyVars';
 
 export interface MenuSetting {
-  bgColor: string;
-  fixed: boolean;
-  collapsed: boolean;
-  canDrag: boolean;
-  show: boolean;
-  hidden: boolean;
-  split: boolean;
-  menuWidth: number;
-  mode: MenuModeEnum;
-  type: MenuTypeEnum;
-  theme: ThemeEnum;
-  topMenuAlign: 'start' | 'center' | 'end';
-  trigger: TriggerEnum;
-  accordion: boolean;
-  closeMixSidebarOnChange: boolean;
-  collapsedShowTitle: boolean;
+  bgColor: string
+  fixed: boolean
+  collapsed: boolean
+  canDrag: boolean
+  show: boolean
+  hidden: boolean
+  split: boolean
+  menuWidth: number
+  mode: MenuModeEnum
+  type: MenuTypeEnum
+  theme: ThemeEnum
+  topMenuAlign: 'start' | 'center' | 'end'
+  trigger: TriggerEnum
+  accordion: boolean
+  closeMixSidebarOnChange: boolean
+  collapsedShowTitle: boolean
   // mixSideTrigger: MixSidebarTriggerEnum;
-  mixSideFixed: boolean;
+  mixSideFixed: boolean
 }
 
 export interface MultiTabsSetting {
   // 是否显示
-  show: boolean;
+  show: boolean
   // 开启快速操作
-  showQuick: boolean;
-  canDrag: boolean;
+  showQuick: boolean
+  canDrag: boolean
 
   // 显示刷新按钮
-  showRedo: boolean;
+  showRedo: boolean
 
   // 显示折叠按钮
-  showFold: boolean;
+  showFold: boolean
 }
 
 export interface HeaderSetting {
-  bgColor: string;
-  fixed: boolean;
-  show: boolean;
-  theme: ThemeEnum;
+  bgColor: string
+  fixed: boolean
+  show: boolean
+  theme: ThemeEnum
 
   // 显示全屏按钮
-  showFullScreen: boolean;
+  showFullScreen: boolean
   // 开启全屏功能
-  useLockPage: boolean;
+  useLockPage: boolean
   // 显示文档按钮
-  showDoc: boolean;
+  showDoc: boolean
   // 显示消息中心按钮
-  showNotice: boolean;
+  showNotice: boolean
 
-  showSearch: boolean;
+  showSearch: boolean
 }
 
 export interface LocaleSetting {
-  show: boolean;
+  show: boolean
   // Current language
   // lang: LocaleType;
   // // default language
@@ -69,96 +74,96 @@ export interface LocaleSetting {
 
 export interface TransitionSetting {
   //  Whether to open the page switching animation
-  enable: boolean;
+  enable: boolean
 
   // Route basic switching animation
-  basicTransition: RouterTransitionEnum;
+  basicTransition: RouterTransitionEnum
 
   // Whether to open page switching loading
-  openPageLoading: boolean;
+  openPageLoading: boolean
 
   // Whether to open the top progress bar
-  openNProgress: boolean;
+  openNProgress: boolean
 }
 
 export interface ProjectConfig {
-  locale: LocaleSetting;
+  locale: LocaleSetting
 
-  permissionCacheType: CacheTypeEnum;
+  permissionCacheType: CacheTypeEnum
 
   // 是否显示配置按钮
-  showSettingButton: boolean;
+  showSettingButton: boolean
   // 权限模式
-  permissionMode: PermissionModeEnum;
+  permissionMode: PermissionModeEnum
   // 网站灰色模式，用于可能悼念的日期开启
-  grayMode: boolean;
+  grayMode: boolean
   // 是否开启色弱模式
-  colorWeak: boolean;
+  colorWeak: boolean
   // 主题色
-  themeColor: string;
+  themeColor: string
   // themeMode: ThemeMode;
   // 全屏显示主界面,不显示菜单,及顶部
-  fullContent: boolean;
+  fullContent: boolean
   // 区域宽度
-  contentMode: ContentEnum;
+  contentMode: ContentEnum
   // 是否显示logo
-  showLogo: boolean;
-  showFooter: boolean;
-  headerSetting: HeaderSetting;
+  showLogo: boolean
+  showFooter: boolean
+  headerSetting: HeaderSetting
   // 菜单类型
   // menuType: MenuTypeEnum;
-  menuSetting: MenuSetting;
+  menuSetting: MenuSetting
 
   // 多标签页设置
-  multiTabsSetting: MultiTabsSetting;
+  multiTabsSetting: MultiTabsSetting
 
-  transitionSetting: TransitionSetting;
+  transitionSetting: TransitionSetting
 
   // pageLayout是否开启keep-alive
-  openKeepAlive: boolean;
+  openKeepAlive: boolean
 
   //
   // 锁屏时间
-  lockTime: number;
+  lockTime: number
   // 显示面包屑
-  showBreadCrumb: boolean;
+  showBreadCrumb: boolean
   // 显示面包屑图标
-  showBreadCrumbIcon: boolean;
+  showBreadCrumbIcon: boolean
   // 使用error-handler-plugin
-  useErrorHandle: boolean;
+  useErrorHandle: boolean
   // 是否开启回到顶部
-  useOpenBackTop: boolean;
+  useOpenBackTop: boolean
   // 是否可以嵌入iframe页面
-  canEmbedIFramePage: boolean;
+  canEmbedIFramePage: boolean
   // 切换界面的时候是否删除未关闭的message及notify
-  closeMessageOnSwitch: boolean;
+  closeMessageOnSwitch: boolean
   // 切换界面的时候是否取消已经发送但是未响应的http请求。
-  removeAllHttpPending: boolean;
+  removeAllHttpPending: boolean
 }
 
 export interface GlobConfig {
   // 网站标题
-  title: string;
+  title: string
   // 项目路径
-  apiUrl: string;
-  uploadUrl?: string;
-  urlPrefix?: string;
-  shortName: string;
+  apiUrl: string
+  uploadUrl?: string
+  urlPrefix?: string
+  shortName: string
 }
 export interface GlobEnvConfig {
   // 网站标题
-  VITE_GLOB_APP_TITLE: string;
+  VITE_GLOB_APP_TITLE: string
   // 项目路径
-  VITE_GLOB_API_URL: string;
-  VITE_GLOB_API_URL_PREFIX?: string;
-  VITE_GLOB_APP_SHORT_NAME: string;
-  VITE_GLOB_UPLOAD_URL?: string;
+  VITE_GLOB_API_URL: string
+  VITE_GLOB_API_URL_PREFIX?: string
+  VITE_GLOB_APP_SHORT_NAME: string
+  VITE_GLOB_UPLOAD_URL?: string
 }
 
 interface GlobWrap {
-  globSetting: Readonly<GlobConfig>;
+  globSetting: Readonly<GlobConfig>
 }
 
 interface ProjectSettingWrap {
-  projectSetting: Readonly<ProjectConfig>;
+  projectSetting: Readonly<ProjectConfig>
 }

@@ -1,40 +1,42 @@
-import React, {lazy, useContext} from 'react'
-import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
-import {UserContext} from '/@/store'
-import {getLoginUserToken} from '/@/utils/lsUtil'
-import {getUserInfo} from '/@/store/user'
+import React, { lazy, useContext } from 'react'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { UserContext } from '/@/store'
+import { getLoginUserToken } from '/@/utils/lsUtil'
+import { getUserInfo } from '/@/store/user'
 
 const Container = lazy(() => import('/@/components/container'))
-const View404 = lazy(() => import('../../pages/404'));
-const View500 = lazy(() => import('/@/pages/500'));
-const Login = lazy(() => import('/@/pages/login'));
+const View404 = lazy(() => import('../../pages/404'))
+const View500 = lazy(() => import('/@/pages/500'))
+const Login = lazy(() => import('/@/pages/login'))
+const Tailwindexplames = lazy(() => import('/@/components/tailwindexplames'))
 
 const Routers: React.FC = () => {
-  const {roles, userDispatch} = useContext(UserContext)
+  const { roles, userDispatch } = useContext(UserContext)
   const token = getLoginUserToken()
 
   return (
     <BrowserRouter>
       <Switch>
         {/*<Route path='/' exact render={() => <Redirect to='/dashboard'/>}/>*/}
-        <Route path="/500" component={View500}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/404" component={View404}/>
+        <Route path="/500" component={View500} />
+        <Route path="/login" component={Login} />
+        <Route path="/404" component={View404} />
+        <Route path="/tailwindexplames" component={Tailwindexplames} />
         <Route
           path="/"
           render={() => {
             if (!token) {
-              return <Redirect to="/login"/>
+              return <Redirect to="/tailwindexplames" />
             } else {
               if (roles && roles.length > 0) {
-                return <Container/>
+                return <Container />
               } else {
-                getUserInfo()(userDispatch).then(() => <Container/>)
+                getUserInfo()(userDispatch).then(() => <Container />)
               }
             }
           }}
         />
-        <Route render={() => <Redirect to="/404"/>}/>
+        <Route render={() => <Redirect to="/404" />} />
       </Switch>
     </BrowserRouter>
   )
